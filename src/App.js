@@ -22,13 +22,23 @@ function App() {
     setData(updatedData); // Actualiza el estado de datos con la nueva lista
   };
 
+  //Update
+  const handleUpdate = (id, name, description) => {
+    const updatedData = data.map((item) => {
+      if (item.id === id) {
+        return { ...item, name: name, description: description }; // Actualiza el nombre y la descripción del elemento con el ID dado
+      }
+      return item;
+    });
+    setData(updatedData); // Actualiza el estado de datos con la nueva lista que incluye el elemento actualizado
+  };
 
   //CRUD
   return (
     <div className="container">
       <h1>Antojitos Mexicanos</h1>
       <Form onSubmit={handleAdd} /> {/* Formulario para agregar nuevos elementos */}
-      <List data={data} onDelete={handleDelete}/> {/* Lista de elementos con capacidad de edición y eliminación */}
+      <List data={data} onDelete={handleDelete} onUpdate={handleUpdate} /> {/* Lista de elementos con capacidad de edición y eliminación */}
     </div>
   );
 
