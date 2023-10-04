@@ -38,7 +38,7 @@ function App() {
   //CRUD
   return (
     <div className="container">
-      <h1>Antojitos Mexicanos</h1>
+      <h1>Amigurumis</h1>
       <Form onSubmit={handleAdd} /> {/* Formulario para agregar nuevos elementos */}
       <List data={data} onDelete={handleDelete} onUpdate={handleUpdate} /> {/* Lista de elementos con capacidad de edición y eliminación */}
     </div>
