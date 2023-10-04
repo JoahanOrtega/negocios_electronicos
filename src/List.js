@@ -67,7 +67,7 @@ const List = ({ data, onDelete, onUpdate }) => {
                 )}
               </td>
               <td>
-                <button onClick={() => onDelete(item.id)}>Eliminar</button>
+                <button style={{backgroundColor:'purple',color:'white'}}onClick={() => onDelete(item.id)}>Eliminar</button>
               </td>
             </tr>
           ))}
