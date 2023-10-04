@@ -16,7 +16,7 @@ const Form = ({ onSubmit }) => {
 
   return (
     <div>
-      <h2>Agregar Comida</h2>
+      <h2>Agregar productos</h2>
       <form onSubmit={handleSubmit}> {/* Define una función para manejar la acción de enviar el formulario */}
         <input
           type="text"
