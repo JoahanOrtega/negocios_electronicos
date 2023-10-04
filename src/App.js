@@ -6,14 +6,16 @@ import Form from './Form';
 
 function App() {
   const [data, setData] = useState([]);
+  const [idCounter, setIdCounter] = useState(1); // Variable para controlar el ID autoincrementable
 
   const handleAdd = (name, description) => {
     const newItem = {
-      id: Date.now(),
+      id: idCounter, // Asigna el ID actual de la variable idCounter
       name: name,
-      description: description, // Agrega la descripción al nuevo elemento
+      description: description,
     };
-    setData([...data, newItem]); // Agrega un nuevo elemento al estado de datos
+    setData([...data, newItem]);
+    setIdCounter(idCounter + 1); // Incrementa el contador de ID para el próximo elemento
   };
 
   //Eliminacion por filtro

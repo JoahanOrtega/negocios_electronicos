@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './List.css';
 
 const List = ({ data, onDelete, onUpdate }) => {
-  const [editingId, setEditingId] = useState(null); // Estado para rastrear el ID del elemento que se está editando
-  const [editedName, setEditedName] = useState(''); // Estado para rastrear el nombre editado
-  const [editedDescription, setEditedDescription] = useState(''); // Estado para rastrear la descripción editada
+  const [editingId, setEditingId] = useState(null);
+  const [editedName, setEditedName] = useState('');
+  const [editedDescription, setEditedDescription] = useState('');
 
   const handleEdit = (id) => {
     setEditingId(id);
@@ -15,7 +15,7 @@ const List = ({ data, onDelete, onUpdate }) => {
   };
 
   const handleUpdate = () => {
-    onUpdate(editingId, editedName, editedDescription); // Llama a la función onUpdate con el ID, nombre y descripción editados
+    onUpdate(editingId, editedName, editedDescription);
     setEditingId(null);
     setEditedName('');
     setEditedDescription('');
@@ -26,6 +26,7 @@ const List = ({ data, onDelete, onUpdate }) => {
       <table className="small-table">
         <thead>
           <tr>
+            <th>ID</th> {/* Agrega la columna ID */}
             <th>Producto</th>
             <th>Descripción</th>
             <th>Editar</th>
@@ -35,6 +36,7 @@ const List = ({ data, onDelete, onUpdate }) => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
+              <td>{item.id}</td> {/* Agrega el ID como una columna */}
               <td>
                 {item.id === editingId ? (
                   <input
@@ -76,4 +78,5 @@ const List = ({ data, onDelete, onUpdate }) => {
 };
 
 export default List;
+
 

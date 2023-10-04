@@ -33,7 +33,7 @@ const Form = ({ onSubmit }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)} // Actualiza el estado de la descripción cuando cambia el valor del campo de entrada
         />
-        <button type="submit">Agregar</button> {/* Botón para enviar el formulario */}
+        < button type="submit" style={{ backgroundColor: 'purple', color: 'white' }}>Agregar</button>{/* Botón para enviar el formulario */}
       </form>
       <br></br>
     </div>
